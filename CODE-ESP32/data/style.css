@@ -1,0 +1,390 @@
+*{
+    margin: 0;
+}
+
+.container{
+    background-color: rgb(50, 53, 49);
+    width: 80%;
+    height: 100vh;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    box-shadow: 0px 0px 10px rgb(161, 109, 11);
+}
+
+.leduong{
+    width: 40%;
+    height: 38%;
+    background-color: rgb(190, 167, 115);
+}
+
+.le1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom-right-radius: 50px;
+}
+
+.le2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-bottom-left-radius: 50px;
+}
+
+.le3{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top-right-radius: 50px;
+}
+
+.le4{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-top-left-radius: 50px;
+}
+
+.le1::after{
+    content: "";
+    background-color: rgb(168, 163, 163);
+    width: 10px;
+    height: 65%;
+    position: absolute;
+    right: -24%;
+    top: 0;
+}
+
+.le2::after{
+    content: "";
+    background-color: rgb(168, 163, 163);
+    width: 10px;
+    height: 65%;
+    position: absolute;
+    left: -24%;
+    top: 0;
+}
+
+.le3::after{
+    content: "";
+    background-color: rgb(168, 163, 163);
+    width: 10px;
+    height: 65%;
+    position: absolute;
+    right: -24%;
+    bottom: 0;
+}
+
+.le4::after{
+    content: "";
+    background-color: rgb(168, 163, 163);
+    width: 10px;
+    height: 65%;
+    position: absolute;
+    left: -24%;
+    bottom: 0;
+}
+
+.le1::before{
+    content: "";
+    background-color: rgb(168, 163, 163);
+    width: 70%;
+    height: 10px;
+    position: absolute;
+    left: 0;
+    bottom: -30%;
+}
+
+.le2::before{
+    content: "";
+    background-color: rgb(168, 163, 163);
+    width: 70%;
+    height: 10px;
+    position: absolute;
+    right: 0;
+    bottom: -30%;
+}
+
+.le3::before{
+    content: "";
+    background-color: rgb(168, 163, 163);
+    width: 70%;
+    height: 10px;
+    position: absolute;
+    left: 0;
+    top: -30%;
+}
+
+.le4::before{
+    content: "";
+    background-color: rgb(168, 163, 163);
+    width: 70%;
+    height: 10px;
+    position: absolute;
+    right: 0;
+    top: -30%;
+}
+
+.vachdung {
+    height: 10px;
+    background-color: rgb(168, 163, 163);
+}
+
+.dung1 {
+    position: absolute;
+    top: 24%;
+    left: 40%;
+    width: 20%;
+}
+
+.dung2 {
+    position: absolute;
+    top: 49.5%;
+    right: 20.5%;
+    transform: rotate(90deg);
+    width: 15%;
+}
+
+.dung3 {
+    position: absolute;
+    bottom: 24%;
+    right: 40%;
+    width: 20%;
+}
+
+.dung4 {
+    position: absolute;
+    transform: rotate(90deg);
+    bottom: 49.5%;
+    left: 20.5%;
+    width: 15%;
+}
+
+.dibo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.vachke {
+    width: calc(100%/8);
+    height: 100%;
+    background-color: rgb(168, 163, 163);
+}
+
+.qa1 {
+    width: 19%;
+    height: 7%;
+    position: absolute;
+    top: 26%;
+    left: 40.5%;
+}
+
+.qa2 {
+    position: absolute;
+    transform: rotate(90deg);
+    width: 14%;
+    height: 7%;
+    top: 46.5%;
+    left: 62%;
+}
+
+.qa3 {
+    width: 19%;
+    height: 7%;
+    position: absolute;
+    bottom: 26%;
+    left: 40.5%;
+}
+
+.qa4 {
+    position: absolute;
+    transform: rotate(90deg);
+    width: 14.5%;
+    height: 7%;
+    top: 46.5%;
+    right: 62%;
+}
+
+/* ----------- light ------------------- */
+
+.truden1{
+    position: absolute;
+    top: 12%;
+    left: 28.5%;
+}
+
+.truden3{
+    position: absolute;
+    bottom: 10%;
+    left: 29%;
+}
+
+.truden2{
+    position: absolute;
+    bottom: 10%;
+    right: 22%;
+}
+
+.truden4{
+    position: absolute;
+    top: 12%;
+    right: 23%;
+} 
+
+.truden1 > i{
+    font-size: 50px;
+    position: absolute;
+    top: -40%;
+    right: 29%;
+}
+
+.truden2 > i{
+    font-size: 50px;
+    position: absolute;
+    top: -40%;
+    left: -30%;
+}
+
+.truden3 > i{
+    font-size: 50px;
+    position: absolute;
+    top: -73%;
+    left: 7%;
+}
+
+.truden4 > i{
+    font-size: 50px;
+    position: absolute;
+    top: -73%;
+    left: 7%;
+}
+
+.traffic-light{
+    width: 10%;
+}
+
+#traffic-signal{
+    background-color: #000;
+    border: 8px solid black;
+    padding: 10px 3px;
+    width: 40px;
+    border-radius: 50px;
+    /* position: absolute; */
+}
+.light{
+    width:40px;
+    height: 40px;
+    border-radius: 50%;
+    opacity: .3;
+}
+#line1{
+    position: absolute;
+    top: 100%;
+    height:50%;
+    width:10px;
+    background:#000;
+    margin-left:26px;
+}
+#line2{
+    height:10px;
+    width:42%;
+    background:#000;
+    position: absolute;
+    bottom: -50%;
+}
+.green{
+    background-color: rgb(75, 245, 75);
+}
+.yellow{
+    background-color: yellow;
+}
+.red{
+    background-color: red;
+}
+
+/* ------------------ */
+ul.cdown {
+    width: 2%;
+    color: #fff;
+    background-color: #000;
+    border: 1px solid #000;
+    border-radius: 30%;
+    border-width: 1px;
+    overflow: hidden;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+}
+
+ul#countdown1{
+    position: absolute;
+    top: 5%;
+    left: 28.2%;
+}
+
+ul#countdown2{
+    position: absolute;
+    top: 5%;
+    right: 28.6%;
+}
+
+ul#countdown3{
+    position: absolute;
+    bottom: 27%;
+    right: 27.6%;
+}
+
+ul#countdown4{
+    position: absolute;
+    bottom: 27%;
+    left: 28.6%;
+}
+
+li {
+    display: inline-block;
+    font-size: 50px;
+    /* font-size: 6vw; */
+    text-align: center;
+    margin: 0;
+    transform: translateX(-58%);
+}
+
+/* ------------ button ------------- */
+.myButton {
+    background-color: #4CAF50; /* Màu nền xanh */
+    color: white; /* Màu chữ trắng */
+    padding: 10px 20px; /* Kích thước button */
+    border: none; /* Bỏ viền */
+    border-radius: 5px; /* Bo góc button */
+    cursor: pointer; /* Hình con trỏ khi rê chuột vào button */
+}
+
+  /* Hiệu ứng hover */
+.myButton:hover {
+    background-color: #3e8e41;
+}
+
+/* Hiệu ứng active */
+.myButton:active {
+background-color: #3e8e41;
+box-shadow: 0 5px #666;
+transform: translateY(4px);
+}
+
+/* Button bị disabled */
+.myButton:disabled {
+opacity: 0.6;
+cursor: not-allowed;
+}
+
+.btn_group{
+    position: absolute;
+    top: 15%;
+    left: -10%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20%;
+}
+  
