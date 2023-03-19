@@ -9,10 +9,10 @@
     <body>
         <div class="container">
             <div class="btn_group">
-                <button class="myButton" onclick="onAll()">ON</button>
-                <button class="myButton" onclick="stopTimer()">OFF</button>
-                <button class="myButton" onclick="lane13ON()">Lane 1,3</button>
-                <button class="myButton" onclick="lane24ON()">Lane 2,4</button>
+                <button class="myButton" id="onALL" onclick="onAll(this)">ON</button>
+                <button class="myButton" id="stop" onclick="stop(this)">OFF</button>
+                <button class="myButton" id="red" onclick="red(this)">Red</button>
+                <button class="myButton" id="yellowBlink" onclick="yellowBlink(this)">yellow</button>
             </div>
 
 
@@ -243,6 +243,15 @@
             }
 
             function offAll (){
+                if(isBlink==1){
+                    offBlink();
+                }
+                clearInterval(countdownTimer);
+                seconds = 0;
+                updateTime();
+                clearInterval(countdownTimer2);
+                seconds2 = 0;
+                updateTime2();
                 var green1=document.getElementById("green1");
                 var red1=document.getElementById("red1");
                 var yellow1=document.getElementById("yellow1");
@@ -354,7 +363,7 @@
                 }, 1000); 
             }
 
-            function stopTimer() {
+            function stop(element) {
                 clearInterval(countdownTimer);
                 seconds = 0;
                 countDownStatus = 1;
@@ -368,32 +377,49 @@
                 offAll();
                 updateTime();
                 updateTime2();
+
+                resetPosition(element);
             }
 
-            function lane13ON() {
-                clearInterval(countdownTimer);
-                seconds = 0;
-                updateTime();
-                clearInterval(countdownTimer2);
-                seconds2 = 0;
-                updateTime2();
+            function red(element) {
+                offAll();
                 redLight1();
                 redLight2();
-                greenLight3();
-                greenLight4();
-            }
-
-            function lane24ON() {
-                clearInterval(countdownTimer);
-                seconds = 0;
-                updateTime();
-                clearInterval(countdownTimer2);
-                seconds2 = 0;
-                updateTime2();
-                greenLight1();
-                greenLight2();
                 redLight3();
                 redLight4();
+                resetPosition(element);
+            }
+
+            var isBlink = 0;
+
+            function yellowBlink(element) {
+                offAll();
+                isBlink = 1;
+                var yellow1=document.getElementById("yellow1");
+                var yellow2=document.getElementById("yellow2");
+                var yellow3=document.getElementById("yellow3");
+                var yellow4=document.getElementById("yellow4");
+                blink = setInterval(function(){
+                    yellow1.classList.toggle('blink');
+                    yellow2.classList.toggle('blink');
+                    yellow3.classList.toggle('blink');
+                    yellow4.classList.toggle('blink');
+                },500)
+
+                resetPosition(element);
+            }   
+
+            function offBlink() {
+                clearInterval(blink);
+                isBlink = 0;
+                var yellow1=document.getElementById("yellow1");
+                var yellow2=document.getElementById("yellow2");
+                var yellow3=document.getElementById("yellow3");
+                var yellow4=document.getElementById("yellow4");
+                yellow1.classList.remove('blink');
+                yellow2.classList.remove('blink');
+                yellow3.classList.remove('blink');
+                yellow4.classList.remove('blink');
             }
 
             function updateTime() {
@@ -406,11 +432,21 @@
                 document.getElementById("timer4").innerHTML = seconds2;
             }
 
-            function onAll(){
+            function onAll(element){
+                if(isBlink==1){
+                    offBlink();
+                }
                 startTimer1();
                 startTimer2();
+                resetPosition(element);
             }
 
+            function resetPosition(element){
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "/"+element.id, true);
+                console.log(element.id);
+                xhr.send();
+            }
         </script>
     </body>
 </html>

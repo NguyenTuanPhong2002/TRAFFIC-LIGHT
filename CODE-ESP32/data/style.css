@@ -293,6 +293,17 @@
     position: absolute;
     bottom: -50%;
 }
+
+.blink{
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    50% {
+      opacity: 0.8;
+    }
+  }
+
 .green{
     background-color: rgb(75, 245, 75);
 }
